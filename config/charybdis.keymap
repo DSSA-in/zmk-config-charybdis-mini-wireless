@@ -8,7 +8,10 @@
 #define U_TAPPING_TERM 200
 
 / {
-    chosen { zmk,matrix_transform = &default_transform; };
+        chosen { 
+        zmk,matrix_transform = &default_transform;
+        zmk,underglow = &led_strip;
+    };
 };
 
 / {
@@ -114,11 +117,12 @@
         };
 
         NAV {
-            bindings = <
-&trans  &trans    &kp UP    &trans     &trans  &trans    &kp N7           &kp N8                &kp N9          &kp N0  &kp HOME  &kp F1
-&trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans    &kp N4           &u_mt RIGHT_SHIFT N5  &u_mt RCTRL N6  &trans  &trans    &kp F10
-&trans  &trans    &trans    &trans     &trans  &trans    &kp N1           &kp N2                &kp N3          &trans  &trans    &kp F20
-                            &trans     &trans  &trans    &lt 3 BACKSPACE  &kp LSHFT
+            bindings = <&kp ESC         &kp N1   &kp N2  &kp N3          &kp N4        &kp N5            &kp N6          &kp N7           &kp N8     &kp N9   &kp N0       &kp BSPC
+&kp TAB         &kp Q    &kp W   &kp E           &kp R         &kp T             &kp Y           &kp U            &kp I      &kp O    &kp P        &kp BACKSLASH
+&kp LEFT_SHIFT  &kp A    &kp S   &kp D           &kp F         &kp G             &kp H           &kp J            &kp K      &kp L    &kp SEMI     &kp APOS
+&kp LCTRL       &lt 3 Z  &kp X   &kp C           &kp V         &kp B             &kp N           &kp M            &kp COMMA  &kp DOT  &lt 3 SLASH  &kp DELETE
+                                 &kp LEFT_ARROW  &kp UP_ARROW  &lt 1 LEFT_WIN    &lt 2 ENTER     &kp RIGHT_ARROW
+                                                 &kp LEFT_ALT  &kp SPACE         &kp DOWN_ARROW
             >;
         };
 
